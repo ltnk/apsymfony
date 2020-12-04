@@ -26,4 +26,14 @@ class TestController extends AbstractController
         $products = $productRepository->findAll();
         return $this->render('test.html.twig', ['products' => $products]);
     }
+
+
+    /**
+     * @Route("/category", name="category")
+     */
+    public function category(CategoryRepository $categoryRepository)
+    {
+        $categories = $categoryRepository->findAll();
+        return $this->render('category.html.twig', ['categories' => $categories]);
+    }
 }
